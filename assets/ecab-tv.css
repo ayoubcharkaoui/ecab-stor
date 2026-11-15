@@ -1,0 +1,254 @@
+/* ECAB STOR — 10-foot UI / D-pad TV Mode v6.
+   Scoped to html.tv-mode so Android phone and regular desktop styles are unchanged. */
+html.tv-mode {
+  scroll-behavior: auto;
+  scroll-padding-top: 122px;
+}
+html.tv-mode body {
+  font-size: clamp(17px, 1.28vw, 23px);
+  overscroll-behavior-y: contain;
+}
+/* Visible, reversible switch on ordinary desktops and inside TV mode. */
+.tv-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 39px;
+  padding: 0 13px;
+  gap: 6px;
+  white-space: nowrap;
+  background: var(--surface);
+  color: var(--soft);
+  font: 800 12px 'DM Sans', sans-serif;
+  letter-spacing: .025em;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  cursor: pointer;
+}
+.tv-mode-toggle[aria-pressed="true"] {background: var(--lime);color: #142018;border-color: var(--lime)}
+.tv-mode-toggle .tv-screen-symbol {font-size: 17px;line-height: 1}
+@media(max-width:850px){html:not(.tv-mode) .tv-mode-toggle{display:none}}
+html.tv-mode .tv-mode-toggle {display:inline-flex; height:54px; padding-inline:19px;font-size:17px}
+/* Highly visible focus ring works in browsers that don't implement :focus-visible well. */
+html.tv-mode :is(a,button,input,[tabindex="0"]):focus,
+html.tv-mode .tv-nav-active {
+  outline: 4px solid var(--lime) !important;
+  outline-offset: 5px !important;
+  box-shadow: 0 0 0 9px rgba(215,255,104,.16),0 0 24px rgba(215,255,104,.20) !important;
+  position: relative;
+  z-index: 5;
+}
+html.tv-mode :is(a,button,input,[tabindex="0"]) {scroll-margin-top:128px;scroll-margin-bottom:100px}
+html.tv-mode .app-card:focus,
+html.tv-mode .app-card:focus-within {
+  border-color:var(--lime);
+  box-shadow:0 0 0 3px var(--lime),0 0 35px rgba(215,255,104,.13);
+}
+html.tv-mode .app-card:focus {transform:none}
+html.tv-mode .app-card {cursor:pointer}
+html.tv-mode .app-card:focus .card-media {filter:saturate(1.15)}
+html.tv-mode .skip-link:focus {top:10px}
+/* TV safe-areas, 1080p/4K browser rendering and wider catalog layout. */
+html.tv-mode .container {
+  width: min(1880px, calc(100% - clamp(55px, 7vw, 180px)));
+  max-width: none;
+}
+html.tv-mode .top-strip,html.tv-mode .ticker {display:none}
+html.tv-mode .header {
+  height: clamp(78px, 9vh, 110px);
+  background: var(--bg);
+  backdrop-filter:none;
+}
+html.tv-mode .header-inner {gap:clamp(15px,2vw,32px)}
+html.tv-mode .logo-block {width:56px;height:56px;font-size:36px;border-radius:16px}
+html.tv-mode .wordmark-copy strong {font-size:clamp(23px,2.1vw,33px)}
+html.tv-mode .wordmark-copy small {font-size:10px}
+html.tv-mode .main-nav {
+  display:flex !important;
+  position: static !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:clamp(12px,1.8vw,32px);
+  padding:0;
+  width:auto;
+  background:none;
+  box-shadow:none;
+  border:0;
+}
+html.tv-mode .main-nav a {font-size:clamp(15px,1.3vw,21px);padding:13px 8px;border-radius:10px}
+html.tv-mode .nav-toggle {display:none !important}
+html.tv-mode .header-cta {display:flex;min-height:54px;font-size:clamp(14px,1.15vw,19px);padding:13px 23px}
+html.tv-mode .header-actions {gap:12px}
+html.tv-mode .round-action {height:54px;width:54px}
+html.tv-mode .text-action {font-size:17px}
+/* Avoid giant phone illustration and empty vertical travel on a TV. */
+html.tv-mode .hero {
+  display:block;
+  min-height:0;
+  padding-block:clamp(26px,4.3vh,58px);
+}
+html.tv-mode .hero-text {text-align:start;max-width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:9px 34px}
+html.tv-mode .hero .eyebrow {grid-column:1/-1;font-size:clamp(12px,1vw,16px);width:fit-content}
+html.tv-mode .hero h1 {font-size:clamp(34px,3.15vw,60px);margin:3px 0;line-height:1.14;grid-column:1;align-items:start}
+html.tv-mode .hero-lead {grid-column:1;font-size:clamp(17px,1.28vw,23px);margin:0;line-height:1.6;max-width:850px}
+html.tv-mode .hero-buttons {grid-column:2;grid-row:2/4;justify-content:flex-start;gap:16px}
+html.tv-mode .hero-buttons .button {min-height:66px;padding:17px 30px;font-size:clamp(17px,1.22vw,23px)}
+html.tv-mode .hero-art,html.tv-mode .hero-side-index,html.tv-mode .hero-proof {display:none}
+html.tv-mode .catalog-section {padding:clamp(28px,4vh,60px) 0 80px}
+html.tv-mode .section-heading {align-items:center;margin-bottom:18px}
+html.tv-mode .section-heading h2 {font-size:clamp(31px,3vw,54px);margin:8px 0}
+html.tv-mode .section-heading p {font-size:clamp(16px,1.26vw,23px)}
+html.tv-mode .count-stamp strong {font-size:clamp(42px,3.5vw,72px)}
+html.tv-mode .count-stamp span {font-size:14px;max-width:90px}
+html.tv-mode .filters-bar {
+  flex-direction:row;
+  align-items:center;
+  gap:22px;
+  margin:14px 0 25px;
+  padding-top:22px;
+}
+html.tv-mode .filter-list {display:flex;gap:clamp(10px,1vw,18px);flex-wrap:wrap;justify-content:flex-start}
+html.tv-mode .filter {
+  min-height:64px;
+  padding:13px clamp(18px,1.55vw,27px);
+  font-size:clamp(17px,1.2vw,21px);
+  gap:12px;
+}
+html.tv-mode .filter .icon {width:23px;height:23px}
+html.tv-mode .search-wrap {height:64px;min-width:220px;max-width:450px;padding-inline:24px}
+html.tv-mode .search-wrap input {font-size:clamp(16px,1.15vw,21px)}
+html.tv-mode .search-wrap .icon {width:24px;height:24px}
+html.tv-mode .apps-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,1.7vw,30px)}
+html.tv-mode .app-card {border-radius:24px}
+html.tv-mode .card-media {height:clamp(185px,23vh,360px)}
+html.tv-mode .card-image-number {font-size:13px}
+html.tv-mode .card-badge {font-size:11px;padding:10px 14px}
+html.tv-mode .card-hero-icon {width:clamp(65px,5vw,95px);height:clamp(65px,5vw,95px)}
+html.tv-mode .card-photo.tall {height:80%;max-width:40%}
+html.tv-mode .card-content {padding:clamp(20px,1.8vw,33px)}
+html.tv-mode .card-meta {font-size:clamp(13px,.98vw,19px)}
+html.tv-mode .platform-chip .icon {width:20px;height:20px}
+html.tv-mode .card-content h3 {font-size:clamp(22px,1.75vw,32px);line-height:1.35;margin:13px 0 6px}
+html.tv-mode .card-tagline {font-size:clamp(15px,1.15vw,22px);line-height:1.6;min-height:0}
+html.tv-mode .card-bottom {margin-top:19px;padding-top:16px}
+html.tv-mode .card-bottom .play-label {font-size:clamp(10px,.8vw,15px)}
+html.tv-mode .card-bottom-actions {gap:15px}
+html.tv-mode .card-link {width:clamp(55px,4.3vw,76px);height:clamp(55px,4.3vw,76px);border-radius:18px}
+html.tv-mode .card-link .icon {width:28px;height:28px}
+html.tv-mode .app-role-tag {font-size:14px}
+html.tv-mode .catalog-note {padding:26px;gap:18px}
+html.tv-mode .catalog-note strong {font-size:20px}
+html.tv-mode .catalog-note p {font-size:17px;line-height:1.6}
+html.tv-mode .catalog-note .note-soon {font-size:13px}
+html.tv-mode .studio-section {padding-block:70px}
+html.tv-mode .studio-numbers {min-height:255px}
+html.tv-mode .studio-copy>p {font-size:20px}
+html.tv-mode .benefits>div {font-size:18px}
+html.tv-mode .contact-section {padding-block:65px}
+html.tv-mode .contact-plate h2 {font-size:clamp(36px,4vw,68px)}
+html.tv-mode .contact-plate>p {font-size:20px}
+html.tv-mode .footer-links,.tv-mode .footer-inner p {font-size:17px}
+html.tv-mode .detail-dialog {width:min(1150px,calc(100vw - 12vw));max-height:85vh;border-radius:27px;scrollbar-width:auto}
+html.tv-mode .dialog-inner {padding:clamp(26px,3vw,50px)}
+html.tv-mode .dialog-close {width:66px;height:66px}
+html.tv-mode .dialog-top {padding-inline-end:80px}
+html.tv-mode .dialog-top h2 {font-size:clamp(27px,2.3vw,42px)}
+html.tv-mode .dialog-desc {font-size:clamp(17px,1.25vw,23px);line-height:1.7}
+html.tv-mode .dialog-section-title {font-size:clamp(18px,1.25vw,23px)}
+html.tv-mode .dialog-features span {font-size:clamp(15px,1vw,20px);padding:13px 17px}
+html.tv-mode .dialog-source {font-size:clamp(15px,1vw,19px)}
+html.tv-mode .dialog-bottom .button {min-height:70px;padding:18px 30px;font-size:clamp(17px,1.2vw,22px)}
+html.tv-mode .dialog-shots img {height:260px}
+/* Compact 1280-wide TV viewports and browser UI density. */
+@media(max-width:1290px){
+  html.tv-mode .header-cta {display:none}
+  html.tv-mode .container {width:calc(100% - 62px)}
+  html.tv-mode .apps-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  html.tv-mode .hero-text {grid-template-columns:1fr auto}
+  html.tv-mode .hero h1 {font-size:clamp(32px,3.4vw,46px)}
+  html.tv-mode .hero-buttons {gap:10px}
+  html.tv-mode .hero-buttons .button {padding:15px 18px}
+}
+@media(max-width:980px){
+  html.tv-mode .header {height:auto;min-height:80px}
+  html.tv-mode .header-inner {flex-wrap:wrap;padding-block:14px;justify-content:space-between}
+  html.tv-mode .main-nav {order:3;width:100%;justify-content:space-between}
+  html.tv-mode .main-nav a {padding:8px 4px;font-size:17px}
+  html.tv-mode .hero-text {display:flex;flex-direction:column;align-items:flex-start;text-align:start}
+  html.tv-mode .hero h1 {font-size:clamp(31px,4.8vw,48px)}
+  html.tv-mode .hero-buttons {display:flex;justify-content:flex-start;width:100%}
+  html.tv-mode .filters-bar {flex-direction:column;align-items:stretch}
+  html.tv-mode .search-wrap {max-width:none}
+}
+@media(max-width:650px){
+  html.tv-mode .container {width:calc(100% - 38px)}
+  html.tv-mode .apps-grid {grid-template-columns:1fr}
+  html.tv-mode .header-inner {gap:10px}
+  html.tv-mode .header-actions {gap:6px}
+  html.tv-mode .wordmark-copy strong {font-size:19px}
+  html.tv-mode .logo-block {width:44px;height:44px;font-size:26px}
+  html.tv-mode .tv-mode-toggle {height:42px;padding-inline:10px}
+  html.tv-mode .round-action {width:42px;height:42px}
+  html.tv-mode .main-nav {gap:5px}
+  html.tv-mode .main-nav a {font-size:13px}
+  html.tv-mode .section-heading h2 {font-size:30px}
+  html.tv-mode .hero-buttons {flex-wrap:wrap}
+  html.tv-mode .filter-list .filter {padding:9px 14px;min-height:52px;font-size:15px}
+  html.tv-mode .card-content h3 {font-size:23px}
+  html.tv-mode .card-media {height:230px}
+  html.tv-mode .detail-dialog {width:calc(100% - 18px)}
+}
+/* Never trap small-screen users in fullscreen. TV mode is an opt-in class. */
+html.tv-mode .tv-remote-help {
+  position:fixed;
+  bottom:clamp(10px,2vh,24px);
+  inset-inline-start:clamp(15px,3vw,50px);
+  z-index:35;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 16px;
+  max-width:calc(100% - 40px);
+  border:1px solid rgba(215,255,104,.40);
+  background:rgba(10,19,28,.94);
+  border-radius:15px;
+  color:#e6f5dd;
+  font-size:clamp(13px,.9vw,17px);
+  box-shadow:0 6px 30px rgba(0,0,0,.25);
+  pointer-events:none;
+}
+.tv-remote-help {display:none}
+.tv-remote-help kbd {background:#2c4338;color:#dfff82;border-radius:7px;padding:3px 8px;font:800 15px 'DM Sans',sans-serif}
+html.tv-mode .tv-remote-help.tv-help-hidden {display:none}
+html.tv-mode .app-card:focus .card-image-number {color:#fff}
+@media(prefers-reduced-motion:reduce){html.tv-mode *{scroll-behavior:auto!important;animation:none!important}}
+/* High-density TV browsers that expose true 4K CSS viewports. */
+@media(min-width:2560px){
+  html.tv-mode .container{width:min(3260px,calc(100% - 9vw))}
+  html.tv-mode .header{height:145px}
+  html.tv-mode .logo-block{width:82px;height:82px;font-size:50px}
+  html.tv-mode .wordmark-copy strong{font-size:42px}
+  html.tv-mode .main-nav a{font-size:31px;padding:18px}
+  html.tv-mode .round-action,html.tv-mode .tv-mode-toggle{height:77px;min-width:77px;font-size:24px}
+  html.tv-mode .header-cta{font-size:26px;min-height:77px}
+  html.tv-mode .hero h1{font-size:90px}
+  html.tv-mode .hero-lead{font-size:31px;max-width:1200px}
+  html.tv-mode .hero-buttons .button{font-size:30px;min-height:84px}
+  html.tv-mode .section-heading h2{font-size:72px}
+  html.tv-mode .section-heading p{font-size:31px}
+  html.tv-mode .filter{min-height:85px;font-size:28px;padding:15px 35px}
+  html.tv-mode .search-wrap{height:88px;max-width:640px}
+  html.tv-mode .search-wrap input{font-size:27px}
+  html.tv-mode .card-media{height:440px}
+  html.tv-mode .card-content h3{font-size:42px}
+  html.tv-mode .card-tagline{font-size:29px}
+  html.tv-mode .card-meta{font-size:23px}
+  html.tv-mode .card-link{width:95px;height:95px}
+  html.tv-mode .card-bottom .play-label{font-size:19px}
+  html.tv-mode .detail-dialog{width:min(1780px,calc(100vw - 16vw))}
+  html.tv-mode .dialog-top h2{font-size:55px}
+  html.tv-mode .dialog-desc{font-size:31px}
+  html.tv-mode .dialog-bottom .button{font-size:30px}
+}
