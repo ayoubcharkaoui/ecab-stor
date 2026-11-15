@@ -1,0 +1,47 @@
+/* ShareNet Internet VPN Receiver art v5. Visual only: downloads, logic, filters unchanged. */
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media {
+  background-color:#03182b;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media {
+  background-image:linear-gradient(180deg,rgba(1,10,30,.28),rgba(1,10,30,0) 42%,rgba(1,10,30,.17) 100%),url("sharenet-client-cover.webp");
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media {
+  background-image:linear-gradient(180deg,rgba(1,10,30,.28),rgba(1,10,30,0) 42%,rgba(1,10,30,.18) 100%),url("sharenet-windows-cover.webp");
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media::before,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media::before {display:none}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media::after,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media::after {
+  position:absolute;inset-inline-start:13px;bottom:14px;z-index:1;
+  padding:6px 9px;border:1px solid rgba(92,246,231,.55);border-radius:9px;
+  background:rgba(2,17,38,.78);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+  font:800 9px/1.2 'DM Sans',Arial,sans-serif;letter-spacing:.07em;
+  color:#eafffb;text-shadow:0 1px 6px rgba(0,0,0,.55);
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media::after {content:"INTERNET  •  LOCAL VPN"}
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media::after {content:"INTERNET  •  VPN / TUN"}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-image-number,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-image-number {
+  z-index:2;color:#f2ffff;text-shadow:0 1px 9px #001224;
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-badge,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-badge {
+  background:rgba(5,17,38,.88);border:1px solid rgba(66,246,227,.46);color:white;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-hero-icon,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-hero-icon {
+  background:#f8ffff;box-shadow:0 9px 25px rgba(0,7,22,.45);
+}
+.app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-tagline,
+.app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-tagline {
+  color:var(--text);font-weight:700;
+}
+@media(max-width:420px){
+  .app-card:has(.card-hero-icon img[src*="sharenet-client-android-tv.png"]) .card-media::after,
+  .app-card:has(.card-hero-icon img[src*="sharenet-receiver-windows.png"]) .card-media::after {font-size:8px;padding:5px 7px}
+}
