@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ECAB STOR — محرّر التطبيقات المحلي</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="apps-data.js" defer></script><script src="studio.js" defer></script>
+</head>
+<body class="editor-body">
+  <main class="editor-shell">
+    <div class="editor-top"><a class="wordmark" href="index.html"><span class="logo-block">E<span>.</span></span><span class="wordmark-copy"><strong>ECAB<span> STOR</span></strong><small>LOCAL CONTENT EDITOR</small></span></a><a class="back" href="index.html">↗ رجوع للموقع</a></div>
+    <div class="editor-heading"><div class="section-label"><span>✳</span> CONTENT STUDIO / LOCAL ONLY</div><h1>تحكّم فالتطبيقات ديالك<span class="lime-period">.</span></h1><p>هاد الأداة خدامة محلياً فالمتصفح ديالك. زيد أو بدّل تطبيقات Android وWindows، ومن بعد حمّل الملف <code>apps-data.js</code> الجديد وعوّض به القديم فالموقع. ما فيهاش Login ولا قاعدة بيانات، وما كتبدلش الموقع المنشور بوحدها.</p></div>
+    <div class="editor-layout"><aside class="editor-panel"><h2>التطبيقات الحالية <span id="appCounter"></span></h2><div class="editor-items" id="appItems"></div><button class="editor-add" type="button" id="newApp">＋ زيد تطبيق جديد</button><div class="editor-instructions"><strong>كيفاش تنشر التغييرات؟</strong><br/>1. عدّل التطبيقات واضغط «حفظ».<br/>2. اضغط «تحميل apps-data.js».<br/>3. عوّض الملف القديم بنفس الاسم.<br/>4. عاود رفع الموقع للاستضافة باش يشوفو الناس التغييرات.</div></aside>
+    <section class="editor-panel"><h2 id="formHeading">تعديل التطبيق</h2><form id="appForm" class="editor-form">
+      <input name="id" type="hidden"/>
+      <div class="field"><label for="nameAr">اسم التطبيق بالعربية *</label><input required id="nameAr" name="nameAr" maxlength="120" placeholder="مثال: تطبيقاتي"/></div>
+      <div class="field"><label for="nameEn">اسم التطبيق بالإنجليزية *</label><input required id="nameEn" name="nameEn" maxlength="120" placeholder="Example App"/></div>
+      <div class="field"><label for="taglineAr">وصف مختصر بالعربية</label><input id="taglineAr" name="taglineAr" maxlength="180"/></div>
+      <div class="field"><label for="taglineEn">وصف مختصر بالإنجليزية</label><input id="taglineEn" name="taglineEn" maxlength="180"/></div>
+      <div class="field"><label for="categoryAr">التصنيف بالعربية</label><input id="categoryAr" name="categoryAr" maxlength="80" placeholder="أدوات"/></div>
+      <div class="field"><label for="categoryEn">التصنيف بالإنجليزية</label><input id="categoryEn" name="categoryEn" maxlength="80" placeholder="Utilities"/></div>
+      <div class="field"><label for="platform">المنصة *</label><select id="platform" name="platform" required><option value="android">Android</option><option value="windows">Windows</option></select></div>
+      <div class="field"><label for="accent">لون البطاقة</label><select id="accent" name="accent"><option value="sage">Sage / أخضر</option><option value="blue">Blue / أزرق</option><option value="coral">Coral / مرجاني</option></select></div>
+      <div class="field full"><label for="descAr">الوصف بالعربية</label><textarea id="descAr" name="descAr"></textarea></div>
+      <div class="field full"><label for="descEn">الوصف بالإنجليزية</label><textarea id="descEn" name="descEn"></textarea></div>
+      <div class="field full"><label for="iconUrl">رابط الأيقونة (https أو assets/...)</label><input id="iconUrl" name="iconUrl" dir="ltr" type="text" placeholder="assets/app-icon.png"/></div>
+      <div class="field full"><label for="shotUrls">روابط صور التطبيق (كل رابط فسطْر)</label><textarea id="shotUrls" name="shotUrls" dir="ltr" placeholder="https://.../screenshot-1.png&#10;https://.../screenshot-2.png"></textarea></div>
+      <div class="field full"><label for="playUrl">رابط Google Play (لـAndroid إن وُجد)</label><input id="playUrl" name="playUrl" dir="ltr" type="url" placeholder="https://play.google.com/store/apps/details?id=..."/></div>
+      <div class="field full"><label for="downloadUrl">رابط تحميل مباشر APK أو EXE (اختياري)</label><input id="downloadUrl" name="downloadUrl" dir="ltr" type="url" placeholder="https://github.com/.../releases/download/..."/></div>
+      <div class="field full"><label for="releaseAsset">اسم ملف GitHub Release (كيخدم مع github-releases.js)</label><input id="releaseAsset" name="releaseAsset" dir="ltr" placeholder="ShareNet-Client-Android-TV.apk"/><small>خاص نفس الاسم يكون موجود فـLatest Release. إعداد اسم المستودع كاين فـ github-releases.js.</small></div>
+      <div class="field"><label for="deviceType">نوع الجهاز (Android)</label><select id="deviceType" name="deviceType"><option value="phone">Android phone</option><option value="tv">Android TV</option><option value="both">Android Phone + Android TV (نفس APK)</option><option value="desktop">Windows desktop</option></select></div>
+      <div class="field"><label for="label">شارة التطبيق</label><input id="label" name="label" maxlength="60" placeholder="ANDROID TV · GITHUB"/></div>
+      <div class="field full"><label for="featuresAr">المميزات بالعربية (ميزة فكل سطر)</label><textarea id="featuresAr" name="featuresAr" placeholder="ساهل للاستعمال&#10;سرعة جيدة"></textarea></div>
+      <div class="field full"><label for="featuresEn">Features in English (one per line)</label><textarea id="featuresEn" name="featuresEn" placeholder="Easy to use&#10;Fast performance"></textarea></div>
+      <div class="field full"><label><input type="checkbox" id="featured" name="featured" style="width:auto;margin-inline-end:7px"/> تطبيق مميز</label></div>
+      <div class="field full"><div class="editor-actions"><button class="button button-lime" type="submit">✓ حفظ التغييرات</button><button class="button button-danger" type="button" id="deleteApp">حذف التطبيق</button><button class="button button-outline" type="button" id="resetLocal">إرجاع الأصل</button></div></div>
+    </form></section></div>
+    <div class="editor-actions" style="justify-content:center;margin-top:30px"><button class="button button-lime" type="button" id="exportJs">↓ تحميل apps-data.js</button><button class="button button-outline" type="button" id="exportJson">↓ نسخة JSON احتياطية</button><label class="button button-outline" style="cursor:pointer">↑ استيراد JSON <input id="importJson" type="file" accept=".json,application/json" style="display:none" /></label></div>
+    <p id="studioStatus" role="status" aria-live="polite" style="text-align:center;color:var(--muted);font-size:12px;margin:16px 0 0"></p>
+  </main>
+</body>
+</html>

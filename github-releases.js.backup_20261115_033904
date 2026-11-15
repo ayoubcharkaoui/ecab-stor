@@ -1,0 +1,11 @@
+/**
+ * ECAB STOR - GitHub Releases configuration.
+ * STEP 1: Publish APK + EXE to a PUBLIC GitHub Release (not just the repo files).
+ * STEP 2: Replace the empty repository below with "YOUR_USERNAME/share-net-clients".
+ * STEP 3: Keep the release asset filenames exactly as in apps-data.js.
+ *
+ * An empty repository keeps download buttons disabled. No fake links are shown.
+ */
+window.ECAB_GITHUB_RELEASES = {
+  repository: ""
+};
