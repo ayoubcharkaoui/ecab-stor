@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0c111c" />
-  <meta name="description" content="ECAB STOR — Discover our Android apps, Android TV receiver and Windows ShareNet tools. Official links, real screenshots, one place." />
+  <meta name="theme-color" content="#090f1b" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://ecabstore.online/" />
+  <meta name="description" content="ECAB STOR — Official apps for Android phones, Android TV and Windows. Discover ShareNet tools to share and receive your phone’s internet connection, and explore useful ECAB applications." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ECAB STOR — Apps built to be useful" />
+  <meta property="og:title" content="ECAB STOR — Apps for real life" />
+  <meta property="og:url" content="https://ecabstore.online/" />
+  <meta property="og:site_name" content="ECAB STOR" />
   <meta property="og:description" content="Explore ECAB apps for Android, Android TV and Windows." />
-  <title>ECAB STOR — تطبيقات تستاهل بلاصتها عندك</title>
+  <title>ECAB STOR — تطبيقات Android وWindows الرسمية</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta property="og:image" content="https://ecabstore.online/assets/sharenet-client-cover.webp" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ECAB STOR","url":"https://ecabstore.online/","description":"Official ECAB app catalog for Android, Android TV and Windows","inLanguage":["ar","en"],"publisher":{"@type":"Organization","name":"ECAB","url":"https://ecabstore.online/"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="assets/sharenet-covers.css" />
+  <link rel="stylesheet" href="assets/ecab-premium-v7.css" />
   <script src="github-releases.js" defer></script>
   <script src="apps-data.js" defer></script>
   <script src="app.js" defer></script>
@@ -36,6 +44,8 @@
     <symbol id="ico-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></symbol>
     <symbol id="ico-squares" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
     <symbol id="ico-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="ico-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></symbol>
+    <symbol id="ico-wifi" viewBox="0 0 24 24"><path d="M2 9c5.6-5.4 14.4-5.4 20 0M5.5 12.5a9.3 9.3 0 0 1 13 0M9.5 16a3.7 3.7 0 0 1 5 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></symbol>
     <symbol id="ico-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   </svg>
   <a href="#apps" class="skip-link" data-i18n="skip">تجاوز للتطبيقات</a>
@@ -63,18 +73,33 @@
       </div>
       <div class="hero-side-index" aria-hidden="true">01 / 05 — THE STUDIO</div>
     </section>
+    <section class="feature-rail container" aria-label="Our platforms">
+      <div class="feature-rail-item"><span class="rail-icon"><svg class="icon"><use href="#ico-phone"/></svg></span><span><strong>Android Phone</strong><small data-i18n="railPhone">تطبيقات للهاتف</small></span></div>
+      <div class="feature-rail-item"><span class="rail-icon"><svg class="icon"><use href="#ico-monitor"/></svg></span><span><strong>Android TV</strong><small data-i18n="railTv">تجربة مناسبة للتلفاز</small></span></div>
+      <div class="feature-rail-item"><span class="rail-icon"><svg class="icon"><use href="#ico-monitor"/></svg></span><span><strong>Windows</strong><small data-i18n="railWindows">أدوات للكمبيوتر</small></span></div>
+      <div class="feature-rail-item"><span class="rail-icon"><svg class="icon"><use href="#ico-shield"/></svg></span><span><strong data-i18n="railOfficial">روابط رسمية</strong><small>Google Play · GitHub</small></span></div>
+    </section>
+    <section class="sharenet-showcase container" id="sharenet" aria-labelledby="sharenetHeading">
+      <div class="showcase-body"><div class="showcase-heading"><span class="section-label">SPOTLIGHT / SHARENET</span><h2 id="sharenetHeading" data-i18n="showcaseHeading">إنترنت الهاتف، على أجهزتك الأخرى.</h2><p data-i18n="showcaseLead">Share Net with Proxy كيرسل الاتصال من الهاتف؛ وShareNet Client وWindows Receiver كيستقبلوه عبر VPN أو TUN محلي. الاقتران بــQR أو 6 أرقام، والجهاز المرسل خاصو يكون قابل للوصول عبر الشبكة.</p></div><div class="showcase-actions"><a class="button button-lime" href="#apps" data-i18n="showcaseButton">اكتشف تطبيقات ShareNet</a><span class="showcase-trust"><svg class="icon"><use href="#ico-shield"/></svg><span data-i18n="showcaseNote">VPN محلي لتوجيه الاتصال، ماشي خدمة لتغيير البلد</span></span></div></div>
+      <div class="showcase-flow" aria-label="Phone shares internet to Android and Windows receivers">
+        <div class="flow-node flow-source"><div class="flow-node-icon"><svg class="icon"><use href="#ico-phone"/></svg></div><strong data-i18n="flowSource">الهاتف المرسل</strong><small>Share Net with Proxy</small></div>
+        <div class="flow-bridge"><div class="flow-track"><span class="flow-beam"></span><span class="flow-lock"><svg class="icon"><use href="#ico-shield"/></svg></span></div><small>LOCAL VPN / PROXY</small></div>
+        <div class="flow-receivers"><div class="flow-node"><div class="flow-node-icon"><svg class="icon"><use href="#ico-phone"/></svg></div><strong>Android</strong><small>Phone + TV</small></div><div class="flow-node"><div class="flow-node-icon"><svg class="icon"><use href="#ico-monitor"/></svg></div><strong>Windows</strong><small>Receiver</small></div></div>
+      </div>
+    </section>
     <div class="ticker"><div class="ticker-track"><span>ANDROID · TV · WINDOWS</span><span>✳</span><span>SMALL DETAILS. BIG IMPACT.</span><span>✳</span><span>ECAB STOR</span><span>✳</span><span>BUILT FOR REAL LIFE</span><span>✳</span><span>ANDROID · TV · WINDOWS</span><span>✳</span><span>SMALL DETAILS. BIG IMPACT.</span><span>✳</span></div></div>
     <section class="catalog-section" id="apps" aria-labelledby="catalogHeading"><div class="container">
       <div class="section-heading"><div><span class="section-label"><span>02</span> / <span data-i18n="catalogKicker">مكتبة التطبيقات</span></span><h2 id="catalogHeading" data-i18n="catalogHeading">لقَى التطبيق اللي يناسبك<span class="lime-period">.</span></h2><p data-i18n="catalogSub">جميع التطبيقات ديال ECAB فبلاصة وحدة، بروابط مباشرة وآمنة.</p></div><div class="count-stamp"><strong id="catalogCount">05</strong><span data-i18n="catalogCountLabel">تطبيقات<br/>متوفرة</span></div></div>
-      <div class="filters-bar"><div class="filter-list" role="group" aria-label="Platform filter"><button class="filter active" data-filter="all" type="button"><span data-i18n="filterAll">الكل</span> <span id="allNumber">05</span></button><button class="filter" data-filter="phone" type="button"><svg class="icon"><use href="#ico-phone"/></svg> Android Phone</button><button class="filter" data-filter="tv" type="button"><svg class="icon"><use href="#ico-monitor"/></svg> Android TV</button><button class="filter" data-filter="windows" type="button"><svg class="icon"><use href="#ico-monitor"/></svg> Windows</button></div><label class="search-wrap"><svg class="icon"><use href="#ico-search"/></svg><input type="search" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="قلّب على تطبيق..." aria-label="Search applications"/><span>/</span></label></div>
+      <div class="filters-bar"><div class="filter-list" role="group" aria-label="Platform filter"><button class="filter active" data-filter="all" type="button" aria-pressed="true" aria-controls="appsGrid"><span data-i18n="filterAll">الكل</span> <span id="allNumber">05</span></button><button class="filter" data-filter="phone" type="button" aria-pressed="false" aria-controls="appsGrid"><svg class="icon"><use href="#ico-phone"/></svg> Android Phone</button><button class="filter" data-filter="tv" type="button" aria-pressed="false" aria-controls="appsGrid"><svg class="icon"><use href="#ico-monitor"/></svg> Android TV</button><button class="filter" data-filter="windows" type="button" aria-pressed="false" aria-controls="appsGrid"><svg class="icon"><use href="#ico-monitor"/></svg> Windows</button></div><label class="search-wrap"><svg class="icon"><use href="#ico-search"/></svg><input type="search" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="قلّب على تطبيق..." aria-label="Search applications"/><span>/</span></label></div>
+      <div id="resultsSummary" class="results-summary" aria-live="polite">5 تطبيقات</div>
       <div id="appsGrid" class="apps-grid" aria-live="polite"></div>
       <div id="emptyState" class="empty-state" hidden><div class="empty-visual"><svg class="icon"><use href="#ico-search"/></svg></div><h3 data-i18n="emptyTitle">ما لقيناش تطبيقات بهاد البحث</h3><p data-i18n="emptyDescription">جرب تبدّل البحث أو اختار جميع التطبيقات.</p><button class="button button-lime" id="clearFilters" type="button" data-i18n="clearFilters">عرض جميع التطبيقات</button></div>
-      <div class="catalog-note"><div class="note-icon">✳</div><div><strong data-i18n="windowsNoteTitle">من الهاتف للتلفاز والكمبيوتر</strong><p data-i18n="windowsNote">استقبل إنترنت الهاتف على Android Phone وAndroid TV عبر VPN محلي، وعلى Windows عبر TUN محلي؛ شغّل Share Net with Proxy فالهاتف أولاً.</p></div><span class="note-soon">SHARENET FAMILY</span></div>
+      <div class="catalog-note"><div class="note-icon">✳</div><div><strong data-i18n="windowsNoteTitle">من الهاتف للتلفاز والكمبيوتر</strong><p data-i18n="windowsNote">كتشارك الإنترنت من هاتف Android عبر Share Net with Proxy، وكيستقبلوه ShareNet Client وWindows Receiver عبر VPN/TUN محلي. خاص الهاتف والجهاز المستقبل يتواصلو عبر الشبكة.</p></div><span class="note-soon">SHARENET FAMILY</span></div>
     </div></section>
     <section class="studio-section" id="studio"><div class="container studio-inner"><div class="studio-numbers"><span>ECAB<span class="star">✳</span></span><small>INDEPENDENT / DIGITAL / STUDIO</small></div><div class="studio-copy"><span class="section-label"><span>03</span> / <span data-i18n="studioKicker">علاش ECAB؟</span></span><h2 data-i18n-html="studioHeading">كنآمنو أن التطبيق الزوين،<br/>هو اللي <em>ينفعك.</em></h2><p data-i18n="studioDescription">كنخدمو على أدوات سهلة ومفيدة للحياة اليومية، ونهتمّو بالتفاصيل اللي كتفرّق فالتجربة. من Android حتى البرامج اللي غادي تجي لـ Windows.</p><div class="benefits"><div><span><svg class="icon"><use href="#ico-shield"/></svg></span><strong data-i18n="benefit1">روابط رسمية ومباشرة</strong></div><div><span><svg class="icon"><use href="#ico-bolt"/></svg></span><strong data-i18n="benefit2">تجارب بسيطة وعملية</strong></div><div><span><svg class="icon"><use href="#ico-squares"/></svg></span><strong data-i18n="benefit3">تطبيقات متنوعة</strong></div></div></div></div></section>
     <section class="contact-section container" id="contact"><div class="contact-plate"><div class="contact-orbit" aria-hidden="true">✳</div><span class="section-label"><span>04</span> / <span data-i18n="contactKicker">خلّينا على تواصل</span></span><h2 data-i18n-html="contactTitle">عندك فكرة، اقتراح<br/>أو شي سؤال؟</h2><p data-i18n="contactDescription">مرحبا برسالتك. كيسعدنا نسمعو الملاحظات والأفكار اللي تقدر تحسّن التطبيقات ديالنا.</p><a class="button button-dark" href="mailto:developerecab@gmail.com?subject=ECAB%20STOR%20-%20Contact"><span data-i18n="contactButton">تواصل معنا</span><svg class="icon"><use href="#ico-up-right"/></svg></a><div class="contact-watermark" aria-hidden="true">LET'S CONNECT</div></div></section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><div><a class="footer-brand" href="#home">ECAB<span> STOR</span><span class="footer-dot">.</span></a><p data-i18n="footerDesc">تطبيقات بسيطة، صايبة الفرق.</p></div><div class="footer-links"><a href="#apps" data-i18n="navApps">التطبيقات</a><a href="https://play.google.com/store/apps/developer?id=ecab&hl=en" target="_blank" rel="noopener noreferrer">Google Play</a><a href="mailto:developerecab@gmail.com" data-i18n="navContact">تواصل معنا</a></div><div class="footer-bottom"><span>© <span id="year"></span> ECAB STOR. <span data-i18n="rights">جميع الحقوق محفوظة.</span></span><span>BUILT WITH PURPOSE. ✳</span></div></div></footer>
+  <footer class="footer"><div class="container footer-inner"><div><a class="footer-brand" href="#home">ECAB<span> STOR</span><span class="footer-dot">.</span></a><p data-i18n="footerDesc">تطبيقات بسيطة، صايبة الفرق.</p></div><div class="footer-links"><a href="#apps" data-i18n="navApps">التطبيقات</a><a href="https://play.google.com/store/apps/developer?id=ecab&hl=en" target="_blank" rel="noopener noreferrer">Google Play</a><a href="#sharenet">ShareNet</a><a href="mailto:developerecab@gmail.com" data-i18n="navContact">تواصل معنا</a></div><div class="footer-bottom"><span>© <span id="year"></span> ECAB STOR. <span data-i18n="rights">جميع الحقوق محفوظة.</span></span><span>BUILT WITH PURPOSE. ✳</span></div></div></footer>
   <dialog class="detail-dialog" id="detailDialog" aria-labelledby="dialogTitle"><div class="dialog-inner"><button type="button" class="dialog-close" id="dialogClose" aria-label="Close details"><svg class="icon"><use href="#ico-close"/></svg></button><div id="dialogContent"></div></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>

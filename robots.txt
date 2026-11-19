@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ecabstore.online/sitemap.xml
